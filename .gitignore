@@ -1,0 +1,10 @@
+node_modules/
+dist/
+work/
+.DS_Store
+*.local
+.impeccable-cache/
+.agents/skills/impeccable/scripts/bin/
+.impeccable/*
+!.impeccable/design.json
+!.impeccable/briefs/

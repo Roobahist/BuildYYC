@@ -1,0 +1,572 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T19:47:17.224993+00:00",
+  "title": "Design System: Considered",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Primary",
+        "tonalRamp": [
+          "oklch(15% 0.0472 189.19)",
+          "oklch(26% 0.0472 189.19)",
+          "oklch(38% 0.0472 189.19)",
+          "oklch(49% 0.0472 189.19)",
+          "oklch(61% 0.0472 189.19)",
+          "oklch(72% 0.0472 189.19)",
+          "oklch(84% 0.0472 189.19)",
+          "oklch(95% 0.0472 189.19)"
+        ]
+      },
+      "primary-foreground": {
+        "role": "neutral",
+        "displayName": "Primary Foreground",
+        "tonalRamp": [
+          "oklch(15% 0.0101 145.50)",
+          "oklch(26% 0.0101 145.50)",
+          "oklch(38% 0.0101 145.50)",
+          "oklch(49% 0.0101 145.50)",
+          "oklch(61% 0.0101 145.50)",
+          "oklch(72% 0.0101 145.50)",
+          "oklch(84% 0.0101 145.50)",
+          "oklch(95% 0.0101 145.50)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(15% 0.0054 95.10)",
+          "oklch(26% 0.0054 95.10)",
+          "oklch(38% 0.0054 95.10)",
+          "oklch(49% 0.0054 95.10)",
+          "oklch(61% 0.0054 95.10)",
+          "oklch(72% 0.0054 95.10)",
+          "oklch(84% 0.0054 95.10)",
+          "oklch(95% 0.0054 95.10)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "tonalRamp": [
+          "oklch(15% 0.0054 95.10)",
+          "oklch(26% 0.0054 95.10)",
+          "oklch(38% 0.0054 95.10)",
+          "oklch(49% 0.0054 95.10)",
+          "oklch(61% 0.0054 95.10)",
+          "oklch(72% 0.0054 95.10)",
+          "oklch(84% 0.0054 95.10)",
+          "oklch(95% 0.0054 95.10)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0249 200.05)",
+          "oklch(26% 0.0249 200.05)",
+          "oklch(38% 0.0249 200.05)",
+          "oklch(49% 0.0249 200.05)",
+          "oklch(61% 0.0249 200.05)",
+          "oklch(72% 0.0249 200.05)",
+          "oklch(84% 0.0249 200.05)",
+          "oklch(95% 0.0249 200.05)"
+        ]
+      },
+      "muted-text": {
+        "role": "neutral",
+        "displayName": "Muted Text",
+        "tonalRamp": [
+          "oklch(15% 0.0172 191.35)",
+          "oklch(26% 0.0172 191.35)",
+          "oklch(38% 0.0172 191.35)",
+          "oklch(49% 0.0172 191.35)",
+          "oklch(61% 0.0172 191.35)",
+          "oklch(72% 0.0172 191.35)",
+          "oklch(84% 0.0172 191.35)",
+          "oklch(95% 0.0172 191.35)"
+        ]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Secondary",
+        "tonalRamp": [
+          "oklch(15% 0.0166 156.90)",
+          "oklch(26% 0.0166 156.90)",
+          "oklch(38% 0.0166 156.90)",
+          "oklch(49% 0.0166 156.90)",
+          "oklch(61% 0.0166 156.90)",
+          "oklch(72% 0.0166 156.90)",
+          "oklch(84% 0.0166 156.90)",
+          "oklch(95% 0.0166 156.90)"
+        ]
+      },
+      "muted-surface": {
+        "role": "neutral",
+        "displayName": "Muted Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0098 125.68)",
+          "oklch(26% 0.0098 125.68)",
+          "oklch(38% 0.0098 125.68)",
+          "oklch(49% 0.0098 125.68)",
+          "oklch(61% 0.0098 125.68)",
+          "oklch(72% 0.0098 125.68)",
+          "oklch(84% 0.0098 125.68)",
+          "oklch(95% 0.0098 125.68)"
+        ]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Accent",
+        "tonalRamp": [
+          "oklch(15% 0.0228 183.16)",
+          "oklch(26% 0.0228 183.16)",
+          "oklch(38% 0.0228 183.16)",
+          "oklch(49% 0.0228 183.16)",
+          "oklch(61% 0.0228 183.16)",
+          "oklch(72% 0.0228 183.16)",
+          "oklch(84% 0.0228 183.16)",
+          "oklch(95% 0.0228 183.16)"
+        ]
+      },
+      "accent-foreground": {
+        "role": "neutral",
+        "displayName": "Accent Foreground",
+        "tonalRamp": [
+          "oklch(15% 0.0412 197.79)",
+          "oklch(26% 0.0412 197.79)",
+          "oklch(38% 0.0412 197.79)",
+          "oklch(49% 0.0412 197.79)",
+          "oklch(61% 0.0412 197.79)",
+          "oklch(72% 0.0412 197.79)",
+          "oklch(84% 0.0412 197.79)",
+          "oklch(95% 0.0412 197.79)"
+        ]
+      },
+      "cyan": {
+        "role": "primary",
+        "displayName": "Cyan",
+        "tonalRamp": [
+          "oklch(15% 0.0483 193.12)",
+          "oklch(26% 0.0483 193.12)",
+          "oklch(38% 0.0483 193.12)",
+          "oklch(49% 0.0483 193.12)",
+          "oklch(61% 0.0483 193.12)",
+          "oklch(72% 0.0483 193.12)",
+          "oklch(84% 0.0483 193.12)",
+          "oklch(95% 0.0483 193.12)"
+        ]
+      },
+      "cyan-hover": {
+        "role": "primary",
+        "displayName": "Cyan Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0529 190.22)",
+          "oklch(26% 0.0529 190.22)",
+          "oklch(38% 0.0529 190.22)",
+          "oklch(49% 0.0529 190.22)",
+          "oklch(61% 0.0529 190.22)",
+          "oklch(72% 0.0529 190.22)",
+          "oklch(84% 0.0529 190.22)",
+          "oklch(95% 0.0529 190.22)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "tonalRamp": [
+          "oklch(15% 0.0097 140.51)",
+          "oklch(26% 0.0097 140.51)",
+          "oklch(38% 0.0097 140.51)",
+          "oklch(49% 0.0097 140.51)",
+          "oklch(61% 0.0097 140.51)",
+          "oklch(72% 0.0097 140.51)",
+          "oklch(84% 0.0097 140.51)",
+          "oklch(95% 0.0097 140.51)"
+        ]
+      },
+      "input": {
+        "role": "neutral",
+        "displayName": "Input",
+        "tonalRamp": [
+          "oklch(15% 0.0140 145.45)",
+          "oklch(26% 0.0140 145.45)",
+          "oklch(38% 0.0140 145.45)",
+          "oklch(49% 0.0140 145.45)",
+          "oklch(61% 0.0140 145.45)",
+          "oklch(72% 0.0140 145.45)",
+          "oklch(84% 0.0140 145.45)",
+          "oklch(95% 0.0140 145.45)"
+        ]
+      },
+      "ring": {
+        "role": "neutral",
+        "displayName": "Ring",
+        "tonalRamp": [
+          "oklch(15% 0.0589 181.62)",
+          "oklch(26% 0.0589 181.62)",
+          "oklch(38% 0.0589 181.62)",
+          "oklch(49% 0.0589 181.62)",
+          "oklch(61% 0.0589 181.62)",
+          "oklch(72% 0.0589 181.62)",
+          "oklch(84% 0.0589 181.62)",
+          "oklch(95% 0.0589 181.62)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.0720 177.61)",
+          "oklch(26% 0.0720 177.61)",
+          "oklch(38% 0.0720 177.61)",
+          "oklch(49% 0.0720 177.61)",
+          "oklch(61% 0.0720 177.61)",
+          "oklch(72% 0.0720 177.61)",
+          "oklch(84% 0.0720 177.61)",
+          "oklch(95% 0.0720 177.61)"
+        ]
+      },
+      "positive": {
+        "role": "neutral",
+        "displayName": "Positive",
+        "tonalRamp": [
+          "oklch(15% 0.0781 160.30)",
+          "oklch(26% 0.0781 160.30)",
+          "oklch(38% 0.0781 160.30)",
+          "oklch(49% 0.0781 160.30)",
+          "oklch(61% 0.0781 160.30)",
+          "oklch(72% 0.0781 160.30)",
+          "oklch(84% 0.0781 160.30)",
+          "oklch(95% 0.0781 160.30)"
+        ]
+      },
+      "positive-bg": {
+        "role": "neutral",
+        "displayName": "Positive Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0150 151.77)",
+          "oklch(26% 0.0150 151.77)",
+          "oklch(38% 0.0150 151.77)",
+          "oklch(49% 0.0150 151.77)",
+          "oklch(61% 0.0150 151.77)",
+          "oklch(72% 0.0150 151.77)",
+          "oklch(84% 0.0150 151.77)",
+          "oklch(95% 0.0150 151.77)"
+        ]
+      },
+      "caution": {
+        "role": "neutral",
+        "displayName": "Caution",
+        "tonalRamp": [
+          "oklch(15% 0.0975 70.84)",
+          "oklch(26% 0.0975 70.84)",
+          "oklch(38% 0.0975 70.84)",
+          "oklch(49% 0.0975 70.84)",
+          "oklch(61% 0.0975 70.84)",
+          "oklch(72% 0.0975 70.84)",
+          "oklch(84% 0.0975 70.84)",
+          "oklch(95% 0.0975 70.84)"
+        ]
+      },
+      "caution-bg": {
+        "role": "neutral",
+        "displayName": "Caution Bg",
+        "tonalRamp": [
+          "oklch(15% 0.0412 83.88)",
+          "oklch(26% 0.0412 83.88)",
+          "oklch(38% 0.0412 83.88)",
+          "oklch(49% 0.0412 83.88)",
+          "oklch(61% 0.0412 83.88)",
+          "oklch(72% 0.0412 83.88)",
+          "oklch(84% 0.0412 83.88)",
+          "oklch(95% 0.0412 83.88)"
+        ]
+      },
+      "destructive": {
+        "role": "neutral",
+        "displayName": "Destructive",
+        "tonalRamp": [
+          "oklch(15% 0.1082 31.07)",
+          "oklch(26% 0.1082 31.07)",
+          "oklch(38% 0.1082 31.07)",
+          "oklch(49% 0.1082 31.07)",
+          "oklch(61% 0.1082 31.07)",
+          "oklch(72% 0.1082 31.07)",
+          "oklch(84% 0.1082 31.07)",
+          "oklch(95% 0.1082 31.07)"
+        ]
+      },
+      "preview-surface": {
+        "role": "neutral",
+        "displayName": "Preview Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0106 106.60)",
+          "oklch(26% 0.0106 106.60)",
+          "oklch(38% 0.0106 106.60)",
+          "oklch(49% 0.0106 106.60)",
+          "oklch(61% 0.0106 106.60)",
+          "oklch(72% 0.0106 106.60)",
+          "oklch(84% 0.0106 106.60)",
+          "oklch(95% 0.0106 106.60)"
+        ]
+      },
+      "dark-panel-text": {
+        "role": "neutral",
+        "displayName": "Dark Panel Text",
+        "tonalRamp": [
+          "oklch(15% 0.0118 145.48)",
+          "oklch(26% 0.0118 145.48)",
+          "oklch(38% 0.0118 145.48)",
+          "oklch(49% 0.0118 145.48)",
+          "oklch(61% 0.0118 145.48)",
+          "oklch(72% 0.0118 145.48)",
+          "oklch(84% 0.0118 145.48)",
+          "oklch(95% 0.0118 145.48)"
+        ]
+      },
+      "dark-panel-muted": {
+        "role": "neutral",
+        "displayName": "Dark Panel Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0213 166.01)",
+          "oklch(26% 0.0213 166.01)",
+          "oklch(38% 0.0213 166.01)",
+          "oklch(49% 0.0213 166.01)",
+          "oklch(61% 0.0213 166.01)",
+          "oklch(72% 0.0213 166.01)",
+          "oklch(84% 0.0213 166.01)",
+          "oklch(95% 0.0213 166.01)"
+        ]
+      },
+      "dark-panel-hover": {
+        "role": "neutral",
+        "displayName": "Dark Panel Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0286 192.58)",
+          "oklch(26% 0.0286 192.58)",
+          "oklch(38% 0.0286 192.58)",
+          "oklch(49% 0.0286 192.58)",
+          "oklch(61% 0.0286 192.58)",
+          "oklch(72% 0.0286 192.58)",
+          "oklch(84% 0.0286 192.58)",
+          "oklch(95% 0.0286 192.58)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Landing headline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Workspace title."
+      },
+      "question": {
+        "displayName": "Question",
+        "purpose": "Focal discriminating question."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Dialog and sheet titles."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Entry fields and detail rows; workspace explanations commonly use 13px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Compact controls and labels."
+      },
+      "metadata": {
+        "displayName": "Metadata",
+        "purpose": "Supporting explanations and status."
+      }
+    },
+    "shadows": [
+      {
+        "name": "entry-field",
+        "value": "0 4px 15px #182b2c05",
+        "purpose": "Subtle entry-field separation."
+      },
+      {
+        "name": "entry-insight",
+        "value": "0 14px 28px #182b2c14",
+        "purpose": "Diffuse lift beneath the rotated insight illustration."
+      },
+      {
+        "name": "priority-thumb",
+        "value": "0 1px 4px #182b2c25",
+        "purpose": "Makes the importance slider thumb legible."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-state",
+        "value": "180ms ease",
+        "purpose": "Background, color, border, and shadow state changes."
+      },
+      {
+        "name": "product-border",
+        "value": "200ms ease",
+        "purpose": "Product-card border and shadow transition."
+      },
+      {
+        "name": "dialog",
+        "value": "200ms",
+        "purpose": "shadcn dialog enter and exit."
+      },
+      {
+        "name": "sheet-open",
+        "value": "500ms ease-in-out",
+        "purpose": "shadcn sheet opening."
+      },
+      {
+        "name": "sheet-close",
+        "value": "300ms ease-in-out",
+        "purpose": "shadcn sheet closing."
+      },
+      {
+        "name": "reduced-motion",
+        "value": ".01ms",
+        "purpose": "Reduced-motion transition and animation duration, one iteration."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-workspace-min",
+        "value": "1450px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1100px"
+      },
+      {
+        "name": "stacked-workspace-max",
+        "value": "850px"
+      },
+      {
+        "name": "comparison-hint-max",
+        "value": "700px"
+      },
+      {
+        "name": "mobile-max",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shipped shadcn button variant, with global transition and focus treatment.",
+      "html": "<button class=\"ds-primary\">Compare finalists</button>",
+      "css": ".ds-primary {display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;background:var(--color-primary,#214b48);color:var(--color-primary-foreground,#f5fbf5);border:0;}.ds-primary:hover {background:color-mix(in oklab,var(--color-primary,#214b48) 90%,transparent);}.ds-primary:focus-visible {outline:2px solid var(--focus,#347769);outline-offset:4px;}.ds-primary:disabled {opacity:.5;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-primary{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Shipped shadcn button variant, with global transition and focus treatment.",
+      "html": "<button class=\"ds-outline\">Compare finalists</button>",
+      "css": ".ds-outline {display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;background:var(--color-background,#f7f6f2);color:var(--ink,#182b2c);border:1px solid var(--line,#d9ded8);box-shadow:0 1px 2px 0 rgb(0 0 0 / .05);}.ds-outline:hover {background:var(--color-accent,#d9eeea);color:var(--color-accent-foreground,#173b3c);}.ds-outline:focus-visible {outline:2px solid var(--focus,#347769);outline-offset:4px;}.ds-outline:disabled {opacity:.5;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-outline{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Shipped shadcn button variant, with global transition and focus treatment.",
+      "html": "<button class=\"ds-secondary\">Compare finalists</button>",
+      "css": ".ds-secondary {display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;background:var(--color-secondary,#e2eee6);color:var(--color-primary,#214b48);border:0;}.ds-secondary:hover {background:color-mix(in oklab,var(--color-secondary,#e2eee6) 80%,transparent);}.ds-secondary:focus-visible {outline:2px solid var(--focus,#347769);outline-offset:4px;}.ds-secondary:disabled {opacity:.5;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-secondary{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Shipped shadcn button variant, with global transition and focus treatment.",
+      "html": "<button class=\"ds-ghost\">Compare finalists</button>",
+      "css": ".ds-ghost {display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;background:transparent;color:var(--ink,#182b2c);border:0;}.ds-ghost:hover {background:var(--color-accent,#d9eeea);color:var(--color-accent-foreground,#173b3c);}.ds-ghost:focus-visible {outline:2px solid var(--focus,#347769);outline-offset:4px;}.ds-ghost:disabled {opacity:.5;pointer-events:none;}@media(prefers-reduced-motion:reduce){.ds-ghost{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Question Action",
+      "kind": "button",
+      "refersTo": "button-question",
+      "description": "Affirmative action on the dark question panel.",
+      "html": "<div class=\"ds-dark\"><button class=\"ds-question\">Yes, include a stand</button></div>",
+      "css": ".ds-dark {background:var(--ink,#182b2c);padding:20px;border-radius:12px;}.ds-question {display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;height:40px;font-size:12px;background:var(--cyan,#bdecea);color:var(--color-accent-foreground,#173b3c);border:0;}.ds-question:hover {background:#a7dad6;}.ds-question:focus-visible {outline:2px solid var(--focus,#347769);outline-offset:4px;}@media(max-width:600px){.ds-question{min-height:44px;}}@media(prefers-reduced-motion:reduce){.ds-dark,.ds-question{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Budget Field",
+      "kind": "input",
+      "refersTo": "input-budget",
+      "description": "Numeric maximum budget enclosure, separate from scoring importance.",
+      "html": "<label class=\"ds-budget-label\" for=\"ds-budget\">Maximum budget (CAD)</label><div class=\"ds-budget\"><span>$</span><input id=\"ds-budget\" type=\"number\" min=\"0\" value=\"1000\" /></div>",
+      "css": ".ds-budget-label{display:block;font:500 12px \"DM Sans\",sans-serif;margin-bottom:14px;color:var(--ink,#182b2c);}.ds-budget{display:flex;align-items:center;padding:10px 12px;background:var(--paper,#fffefa);border:1px solid #b9c7b9;border-radius:7px;color:#53655a;}.ds-budget:focus-within{outline:2px solid #347769;outline-offset:2px;}.ds-budget>span{font:22px \"DM Sans\",sans-serif;}.ds-budget input{border:0;background:transparent;width:100%;min-width:0;padding:0 5px;outline:none;color:var(--ink,#182b2c);font:25px \"Space Grotesk\",sans-serif;font-variant-numeric:tabular-nums;}@media(prefers-reduced-motion:reduce){.ds-budget,.ds-budget-label{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Requirement Chip",
+      "kind": "chip",
+      "refersTo": "constraint-chip",
+      "description": "Reversible active requirement with its own clear action.",
+      "html": "<button class=\"ds-chip\" aria-label=\"Disable included stand requirement\">Included stand<svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M18 6 6 18M6 6l12 12\"/></svg></button>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;gap:8px;color:var(--color-primary,#214b48);padding:4px 9px;background:var(--color-secondary,#e2eee6);border:0;border-radius:5px;font:12px \"DM Sans\",sans-serif;cursor:pointer;transition:background-color 180ms ease;}.ds-chip:hover{background:#cbded0;}.ds-chip:focus-visible{outline:2px solid var(--focus,#347769);outline-offset:4px;}@media(prefers-reduced-motion:reduce){.ds-chip{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Product Reading Surface",
+      "kind": "card",
+      "refersTo": "product-card",
+      "description": "Paper product-card shell and source-matched title/price rows; product artwork is intentionally omitted from this primitive.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-maker\">Roland</p><h3 class=\"ds-card-title\">FP-10</h3><p class=\"ds-subtitle\">Illustrative product and price</p><div class=\"ds-price\"><span><strong>$599</strong> listed</span><span>$829 setup</span></div></article>",
+      "css": ".ds-card{background:var(--paper,#fffefa);color:var(--ink,#182b2c);border:1px solid var(--line,#d9ded8);border-radius:12px;overflow:hidden;padding:18px 18px 16px;transition:border-color 200ms ease,box-shadow 200ms ease;}.ds-card:hover{border-color:#a9bcb0;}.ds-maker{font:600 12px \"DM Sans\",sans-serif;color:#566b5b;letter-spacing:.025em;margin:0 0 4px;}.ds-card-title{font:500 21px/1.1 \"Space Grotesk\",sans-serif;letter-spacing:-.035em;margin:0;}.ds-subtitle{font:12px/1.6 \"DM Sans\",sans-serif;color:var(--muted,#566463);margin:6px 0 18px;}.ds-price{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font:12px \"DM Sans\",sans-serif;color:#53655a;}.ds-price strong{font:500 21px \"Space Grotesk\",sans-serif;color:var(--ink,#182b2c);}.ds-price>span:last-child{color:#234a40;}@media(max-width:600px){.ds-card{padding:20px;}.ds-card-title{font-size:24px;}}@media(prefers-reduced-motion:reduce){.ds-card,.ds-card-title,.ds-maker,.ds-price,.ds-subtitle{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    },
+    {
+      "name": "Header Navigation",
+      "kind": "nav",
+      "description": "The actual header action and demo badge; no invented tabs or active route state.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Main\"><button class=\"ds-how\">How it works<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M7 7h10v10M7 17 17 7\"/></svg></button><span class=\"ds-demo\"><i class=\"ds-dot\"></i>BuildYYC demo</span></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;align-items:center;}.ds-how{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:8px;height:36px;padding:8px 16px;font:500 14px 'DM Sans',sans-serif;white-space:nowrap;cursor:pointer;transition:background-color 180ms ease,color 180ms ease,border-color 180ms ease,box-shadow 180ms ease;color:var(--muted,#566463);background:transparent;border:0;font-size:13px;}.ds-how:hover{background:var(--color-accent,#d9eeea);color:var(--color-accent-foreground,#173b3c);}.ds-how:focus-visible{outline:2px solid var(--focus,#347769);outline-offset:4px;}.ds-demo{display:inline-flex;align-items:center;padding:8px 12px;gap:7px;color:#425950;font:500 12px \"DM Sans\",sans-serif;border:1px solid var(--line,#d9ded8);border-radius:9999px;white-space:nowrap;}.ds-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#408577;}@media(max-width:850px){.ds-nav{gap:10px;}.ds-how{font-size:12px;}}@media(max-width:600px){.ds-demo{display:none;}.ds-nav{gap:0;}}@media(prefers-reduced-motion:reduce){.ds-demo,.ds-dot,.ds-how,.ds-nav{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A calm consumer buying notebook",
+    "overview": "A calm consumer buying notebook translated into a working web app: warm paper, deep green-black ink, generous typographic hierarchy, close reading of costs, and a small cyan interaction accent. Familiar buttons, switches, sheets, and comparison tables stay familiar. The signature is a live decision trail, with exclusions preserved below.\n\nThis remains the provisional identity chosen under the supplied brief\u2019s authorization to make reasonable decisions. The Impeccable direction seed was executed (`seed:3f3d99686eab184c`); the brief\u2019s warm-light/ink/accent direction took precedence over random alternatives. No image comp or aesthetic approval round was conducted because the user requested autonomous implementation and a working MVP. This source-derived record merges the shipped system into that direction; it does not imply user approval of a comp.",
+    "keyCharacteristics": [
+      "Warm paper surfaces with dark ink and restrained cyan actions.",
+      "Familiar controls, readable costs, and compact supporting metadata.",
+      "Visible, reversible decision history and honest uncertainty."
+    ],
+    "rules": [
+      {
+        "name": "The Useful Accent Rule",
+        "body": "Reserve cyan for the next meaningful question action and its dark-panel context; use deep green for ordinary primary controls.",
+        "section": "colors"
+      },
+      {
+        "name": "The Reading Hierarchy Rule",
+        "body": "Use Space Grotesk for headings and prominent numbers, and DM Sans for explanations, labels, and controls. Keep supporting text at the implemented 12px minimum.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Surface Rule",
+        "body": "Use borders and tonal surfaces to organize the workspace; reserve diffuse depth for the entry illustration, fields, controls, and overlays.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve excluded products in a subdued, inspectable disclosure with explicit reasons and a reversible action.",
+      "Do distinguish a hard requirement from its independent scoring importance.",
+      "Do label abstract product illustrations, illustrative scores, and needs-verification states in text.",
+      "Do show Unranked when a score is unavailable and avoid a highest-fit claim for those options.",
+      "Do use Lucide SVG icons beside meaningful labels and preserve visible keyboard focus."
+    ],
+    "donts": [
+      "Don\u2019t present fit scores as evidence confidence or unknown facts as confirmed compliance.",
+      "Don\u2019t turn the landing illustration\u2019s slight rotation into a workspace card treatment.",
+      "Don\u2019t add redundant category kickers or eyebrows above headings.",
+      "Don\u2019t use glyph characters as interface icons."
+    ]
+  }
+}
