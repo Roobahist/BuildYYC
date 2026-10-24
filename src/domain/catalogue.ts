@@ -1,5 +1,6 @@
 import type { Category, Cost, Evidence, Factor, Product } from './types.ts'
 import { images } from './images.ts'
+import { laptopCategory } from './laptops.ts'
 
 const checked = '2026-10-24'
 const assumptions: Evidence = {
@@ -114,4 +115,5 @@ export const categories: Category[] = [
     couch('sunday', 'FRIHETEN sleeper sofa', 'The deep-seat contender', 1399, '#9eaaa6', null, true, 'Fabric', 97, null, null, null, '225 × 112 × 82 cm', 'Packaging dimensions unknown', 'Delivery cost, access, care score, and return policy need checking.'),
     couch('arc', 'MORABO leather sofa', 'Easy to wipe, harder to move', 1249, '#9c6c4e', false, true, 'Leather', 88, 82, 7, 129, '212 × 94 × 84 cm', 'Single pack: 217 × 99 × 89 cm', 'Short demo return window and no narrow-access plan.'),
   ] },
+  laptopCategory,
 ]

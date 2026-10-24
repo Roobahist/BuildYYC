@@ -140,7 +140,7 @@ export function explainChange(previous: Decision, next: Decision, cause: string)
 
 export function matchIntent(text: string, categories: Category[]): { category?: Category; budget?: number } {
   const input = text.toLowerCase()
-  const id = /piano|keyboard/.test(input) ? 'pianos' : /couch|sofa|apartment/.test(input) ? 'couches' : undefined
+  const id = /piano|keyboard/.test(input) ? 'pianos' : /couch|sofa|apartment/.test(input) ? 'couches' : /laptop|notebook|macbook|thinkpad|zenbook|computer/.test(input) ? 'laptops' : undefined
   const match = input.match(/(?:under|budget|maximum|max|up to)\s*(?:ca\$|cad\s*|\$)?\s*([\d,]+(?:\.\d+)?)/i) ?? input.match(/\$\s*([\d,]+(?:\.\d+)?)/)
   const amount = match ? Number(match[1].replaceAll(',', '')) : undefined
   return { category: categories.find(c => c.id === id), budget: amount && Number.isFinite(amount) && amount <= 100000 ? amount : undefined }

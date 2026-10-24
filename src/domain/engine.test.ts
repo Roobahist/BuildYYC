@@ -197,3 +197,56 @@ test('general demo guidance is not counted as missing product data', () => {
   assert.ok(incomplete.verification.some(note => note.includes('costs') || note.includes('demo score')))
   assert.ok(decision.needsVerification.some(row => row.product.id === 'sunday'))
 })
+
+
+test('laptop scenario distinguishes compatibility blockers, priorities and cost of a missing port', () => {
+  const laptops = categories.find(c => c.id === 'laptops')!
+  assert.equal(laptops.products.length, 6)
+  const initial = createSession(laptops)
+  assert.equal(deriveDecision(laptops, initial).eligible.length, 6)
+  assert.equal(deriveDecision(laptops, initial).nextQuestion?.factor.id, 'os')
+  const windows = answerQuestion(initial, 'os', 'required')
+  assert.ok(!deriveDecision(laptops, windows).eligible.some(row => row.product.id === 'macbook-air-m4'))
+  const memory = answerQuestion(windows, 'memoryGb', 'required')
+  assert.deepEqual(new Set(deriveDecision(laptops, memory).eligible.map(row => row.product.id)),
+    new Set(['lenovo-yoga7i', 'thinkpad-e14', 'hp-envy-x360']))
+  const restored = answerQuestion(memory, 'memoryGb', 'flexible')
+  assert.equal(deriveDecision(laptops, restored).eligible.length, 5)
+  const mac = laptops.products.find(p => p.id === 'macbook-air-m4')!
+  assert.equal(acquisitionCost(mac, []).known, mac.price + 45)
+  assert.equal(acquisitionCost(mac, ['usbAdapter']).known, mac.price)
+  assert.equal(matchIntent('Looking for a laptop under $1500', categories).category?.id, 'laptops')
+  assert.equal(matchIntent('Looking for a laptop under $1500', categories).budget, 1500)
+})
+
+test('comparison includes every eligible finalist and puts different weighted factors first', async () => {
+  const { comparisonFields } = await import('./comparison.ts')
+  const laptops = categories.find(c => c.id === 'laptops')!
+  const session = createSession(laptops)
+  const eligible = deriveDecision(laptops, session).eligible
+  const fields = comparisonFields(laptops, eligible, session)
+  assert.equal(eligible.length, 6)
+  assert.ok(fields.some(f => f.id === 'os' && f.differs))
+  assert.ok(fields.some(f => f.id === 'memoryGb' && f.differs))
+  assert.ok(fields.some(f => f.id === 'usbA' && f.differs))
+  assert.ok(fields.every(f => f.values.length === eligible.length))
+  assert.ok(fields.findIndex(f => !f.differs) === -1 || fields.slice(fields.findIndex(f => !f.differs)).every(f => !f.differs))
+  const finalists = deriveDecision(laptops, answerQuestion(session, 'memoryGb', 'required')).eligible
+  assert.equal(finalists.length, 3)
+  assert.ok(comparisonFields(laptops, finalists, session).every(f => f.values.length === 3))
+})
+
+test('full comparison ignores optional card selection, even after filtering', async () => {
+  const { selectComparisonRows } = await import('./comparison.ts')
+  const laptops = categories.find(c => c.id === 'laptops')!
+  const session = createSession(laptops)
+  const eligible = deriveDecision(laptops, session).eligible
+  const selectedIds = eligible.slice(1, 3).map(row => row.product.id)
+  assert.equal(selectComparisonRows(eligible, selectedIds, 'all').length, 6)
+  assert.deepEqual(selectComparisonRows(eligible, selectedIds, 'selected').map(row => row.product.id), selectedIds)
+  const shortlisted = deriveDecision(laptops, answerQuestion(session, 'memoryGb', 'required')).eligible
+  assert.equal(shortlisted.length, 3)
+  assert.equal(selectComparisonRows(shortlisted, selectedIds, 'all').length, 3)
+  assert.equal(selectComparisonRows(shortlisted, selectedIds, 'selected').length, 3,
+    'focused mode with fewer than two eligible choices falls back to all finalists')
+})

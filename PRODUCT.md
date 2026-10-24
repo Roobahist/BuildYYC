@@ -18,7 +18,7 @@ Surface overlooked purchase requirements before a shopper commits. Success is a 
 Questions are chosen from differences among the actual shortlist. Hard blockers and scoring priorities remain independently editable, and eliminated products remain inspectable.
 
 ## Operating Context
-Local, desktop and mobile browser demo. Two curated purchase scenarios; no live inventory or automated reasoning. The supplied detailed brief authorizes autonomous implementation choices without a separate interview.
+Local, desktop and mobile browser demo. Three curated purchase scenarios; no live inventory or automated reasoning. The supplied detailed brief authorizes autonomous implementation choices without a separate interview.
 
 ## Capabilities and Constraints
 Pure deterministic decision engine, typed mock data, estimated acquisition costs, explicitly unknown information, checked direct evidence, and local browser persistence. No backend, authentication, payment, real LLM, scraping, deployment, or CI.
@@ -33,4 +33,9 @@ Pure deterministic decision engine, typed mock data, estimated acquisition costs
 - Let users inspect and change what drives the ranking.
 
 ## Open decisions
-Considered is a provisional product name selected for this MVP. Currency is illustrative CAD; taxes and live availability are outside scope. Robot sensors are deferred pending validation of the first two scenarios.
+Considered is a provisional product name selected for this MVP. Currency is illustrative CAD; taxes and live availability are outside scope. Robot sensors are deferred pending validation of the three demonstration scenarios.
+
+
+## October 2026 demo extension
+
+A third category tests laptop decision-making: mandatory operating system, memory capacity, ports and mobility are separate from ranked battery, display and performance preferences. Evidence is now a first-level action on product cards, and comparison shows all remaining eligible candidates unless the shopper explicitly chooses a focused subset. These are curated demos, not purchase-ready product recommendations.

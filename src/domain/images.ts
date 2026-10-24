@@ -56,5 +56,11 @@ export const images: Record<string, NonNullable<Product['image']>> = {
     "src": "https://www.ikea.com/ca/en/images/products/morabo-sofa-grann-bomstad-golden-brown-wood__1576948_pe1032847_s5.jpg",
     "credit": "IKEA MORABO",
     "sourceUrl": "https://www.ikea.com/ca/en/p/morabo-sofa-grann-bomstad-golden-brown-wood-s29317758/"
-  }
+  },
+  "macbook-air-m4": { src: "https://www.shopdunk.com/images/thumbs/0055933_macbook-air-m4-13-inch-10-core-gpu-16gb-ram-512gb-ssd.png", credit: "ShopDunk (MacBook Air M4)", sourceUrl: "https://shopdunk.com/macbook-air-m4-13-inch-10-core-gpu-16gb-ram-512gb-ssd" },
+  "dell-inspiron14": { src: "https://i.dell.com/is/image/DellContent/content/dam/images/products/laptops-and-2-in-1s/inspiron/14-5440-metal-non-touch/in5440nt-cnb-05000ff095-ice-bl-fpr-metal.psd?$S7-480wide$=", credit: "Dell (Inspiron 14)", sourceUrl: "https://www.dell.com/de-de/shop/deals/pc-laptop-deals" },
+  "asus-zenbook14": { src: "https://id.store.asus.com/media/catalog/product/z/e/zenbook_14_oled_ux3405ma_product_photo_3s_foggy_silver_03_1.jpg", credit: "ASUS (Zenbook 14 OLED)", sourceUrl: "https://id.store.asus.com/90nb14w4-m00r60-ux3405ca-oled5112tm.html" },
+  "lenovo-yoga7i": { src: "https://s3-ap-southeast-2.amazonaws.com/wc-prod-pim/JPEG_1000x1000/LE83JQ000E_.jpg", credit: "Officeworks (Lenovo Yoga 7i)", sourceUrl: "https://www.officeworks.com.au/shop/officeworks/p/lenovo-14-yoga-7i-2-in-1-copilot-pc-core-ultra-7-32gb-1tb-le83jq000e" },
+  "thinkpad-e14": { src: "https://www.firstshop.co.za/cdn/shop/files/21m7001yza-windows-laptops-1130254138.jpg?v=1739469874&width=1214", credit: "FirstShop (Lenovo ThinkPad E14)", sourceUrl: "https://www.firstshop.co.za/products/lenovo-thinkpad-e14-g6-14-inch-wuxga-laptop-intel-core-ultra-7-155h-512gb-ssd-16gb-ram-win-11-pro-21m7001yza-191080" },
+  "hp-envy-x360": { src: "https://samazon.ae/cdn/shop/files/52730524172291-prod_xl-1500x1500_1024x1024.jpg?v=1729874125", credit: "Samazon (HP Envy x360)", sourceUrl: "https://samazon.ae/products/hp-envy-x360-15-fh0013dx-convertible-amd-ryzen-5-7530u-2-0ghz-8gb-ram-256gb-ssd-15-6-inch-fhd-touch-display-windows-11" },
 }
