@@ -510,3 +510,6 @@ p, .product-card-body { line-height: 1.5; }
   .evidence-on-card { flex-wrap: wrap; }
   .evidence-open { margin-left: 24px; }
 }
+
+/* Distinguish sourced claims from curated sample-only inputs in evidence panels. */
+.source-entry .source-meta > span:last-child { font-weight: 600; color: #4e5970; }

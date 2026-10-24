@@ -235,3 +235,18 @@ test('comparison includes every eligible finalist and puts different weighted fa
   assert.equal(finalists.length, 3)
   assert.ok(comparisonFields(laptops, finalists, session).every(f => f.values.length === 3))
 })
+
+test('full comparison ignores optional card selection, even after filtering', async () => {
+  const { selectComparisonRows } = await import('./comparison.ts')
+  const laptops = categories.find(c => c.id === 'laptops')!
+  const session = createSession(laptops)
+  const eligible = deriveDecision(laptops, session).eligible
+  const selectedIds = eligible.slice(1, 3).map(row => row.product.id)
+  assert.equal(selectComparisonRows(eligible, selectedIds, 'all').length, 6)
+  assert.deepEqual(selectComparisonRows(eligible, selectedIds, 'selected').map(row => row.product.id), selectedIds)
+  const shortlisted = deriveDecision(laptops, answerQuestion(session, 'memoryGb', 'required')).eligible
+  assert.equal(shortlisted.length, 3)
+  assert.equal(selectComparisonRows(shortlisted, selectedIds, 'all').length, 3)
+  assert.equal(selectComparisonRows(shortlisted, selectedIds, 'selected').length, 3,
+    'focused mode with fewer than two eligible choices falls back to all finalists')
+})

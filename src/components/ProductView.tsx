@@ -47,7 +47,7 @@ function ScoreDetails({ row, session }: { row: RankedProduct; session: Session }
 
 function EvidenceDetails({ row }: { row: RankedProduct }) {
   return <div className="evidence-details">{row.product.evidence.map(source => <article className="source-entry" key={source.id}>
-    <div className="source-meta"><Badge variant="outline">{source.type}</Badge><span>{source.confidence} confidence</span></div><h4>{source.claim}</h4>
+    <div className="source-meta"><Badge variant="outline">{source.type}</Badge><span>{source.type === 'Demo assumption' ? 'Curated demo input' : `${source.confidence} confidence in cited claim`}</span></div><h4>{source.claim}</h4>
     <p>{source.relevance}</p><p className="small muted">{source.limitation}</p>
     {source.url ? <a className="source-link" href={source.url} target="_blank" rel="noreferrer">{source.title}<ArrowUpRight size={14} /></a> : <span className="small muted">No external citation. Illustrative assumption.</span>}
     {source.checkedAt && <small className="source-date">Link and claim checked {source.checkedAt}{source.date ? ` · Published ${source.date}` : ' · Publication date not provided'}</small>}

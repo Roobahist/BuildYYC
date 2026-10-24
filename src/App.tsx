@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog'
 import { categories } from '@/domain/catalogue'
 import { answerQuestion, createSession, deriveDecision, explainChange, matchIntent, money, restoreSession } from '@/domain/engine'
+import { selectComparisonRows, type ComparisonMode } from '@/domain/comparison'
 import type { Category, Session } from '@/domain/types'
 import { Preferences, type UpdateSession } from '@/components/Preferences'
 import { ExcludedProducts, ProductArt, ProductCard } from '@/components/ProductView'
@@ -56,7 +57,7 @@ export default function App() {
   const [notice, setNotice] = useState('Your initial shortlist is ready. Explore the questions that meaningfully narrow it.')
   const [storageNotice, setStorageNotice] = useState('')
   const [comparisonOpen, setComparisonOpen] = useState(false)
-  const [comparisonMode, setComparisonMode] = useState<'all' | 'selected'>('all')
+  const [comparisonMode, setComparisonMode] = useState<ComparisonMode>('all')
   const heading = useRef<HTMLHeadingElement>(null)
   const category = categories.find(c => c.id === session?.categoryId) ?? categories[0]
   const decision = useMemo(() => session ? deriveDecision(category, session) : null, [category, session])
@@ -86,11 +87,9 @@ export default function App() {
   }
   const selectedEligibleCount = session && decision ? session.compare.filter(id => decision.eligible.some(row => row.product.id === id)).length : 0
   const comparisonRows = decision && session
-    ? comparisonMode === 'selected' && selectedEligibleCount >= 2
-      ? decision.eligible.filter(row => session.compare.includes(row.product.id))
-      : decision.eligible
+    ? selectComparisonRows(decision.eligible, session.compare, comparisonMode)
     : []
-  const openComparison = (mode: 'all' | 'selected' = 'all') => {
+  const openComparison = (mode: ComparisonMode = 'all') => {
     setComparisonMode(mode)
     setComparisonOpen(true)
   }

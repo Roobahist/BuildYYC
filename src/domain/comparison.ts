@@ -42,3 +42,12 @@ export function comparisonFields(category: Category, rows: RankedProduct[], sess
     b.importance - a.importance ||
     a.label.localeCompare(b.label))
 }
+
+export type ComparisonMode = 'all' | 'selected'
+
+/** All remaining products are the default. A focused subset is opt-in only. */
+export function selectComparisonRows(eligible: RankedProduct[], selectedIds: string[], mode: ComparisonMode): RankedProduct[] {
+  if (mode !== 'selected') return eligible
+  const selected = eligible.filter(row => selectedIds.includes(row.product.id))
+  return selected.length >= 2 ? selected : eligible
+}

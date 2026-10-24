@@ -30,14 +30,14 @@ Tests use Node's built-in test runner and native TypeScript stripping, with no t
 4. Set price importance to **0**. The budget filter remains enabled. Set portability importance to **0**, then **5**, to inspect how priorities change the order.
 5. Open **Why this piano?** for setup costs, the exact weighted calculation, source confidence, and requirement results.
 6. Open **All considerations**. Mark a stand already owned: the ES120 setup estimate drops from $1,034 to $914 and returns under budget.
-7. Choose up to three eligible products to compare, or compare the top two directly. Unknown values and remaining trade-offs stay visible.
+7. Click **Compare all** to see every remaining eligible option and the biggest differences. To focus on two or three, select those cards and click **Selected**.
 8. Switch to **Couches** and require a narrow-access delivery plan. Two offers fail; one remains explicitly unverified. No option is guaranteed to fit a doorway or hallway.
 
-Requests mentioning pianos/keyboards or couches/sofas/apartments can start the corresponding demo, including simple dollar budgets. Unsupported requests get an honest explanation rather than simulated understanding.
+Requests mentioning pianos/keyboards, couches/sofas/apartments or laptops/notebooks can start the corresponding demo, including simple dollar budgets. Unsupported requests get an honest explanation rather than simulated understanding.
 
 ## What works
 
-- Two typed catalogues: six piano offers and five illustrative IKEA-model couch offers.
+- Three typed catalogues: six piano offers, five illustrative IKEA-model couch offers, and six mock laptop configurations.
 - Pure eligibility, acquisition-cost, normalization, weighted scoring, stable tie-breaking, adaptive questions, and change explanations.
 - Independently editable hard requirements and 0–5 importance weights. Upholstery can be a weighted preference or a mandatory selection.
 - Reversible exclusions, question skipping, editable earlier answers, owned accessories, listed-price versus setup-cost budgets, missing-score coverage, and explicit unknowns.
@@ -68,7 +68,10 @@ Zero weights do not contribute. Missing values are omitted and weighted data cov
 - `src/domain/engine.test.ts`: focused invariant and interaction tests.
 - `src/App.tsx`: local session orchestration, entry, question flow, and change notices.
 - `src/components/Preferences.tsx`: independent requirements and importance controls.
-- `src/components/ProductView.tsx`: shortlist, details, evidence, exclusions, comparison.
+- `src/components/ProductView.tsx`: shortlist, immediate evidence entry, details and exclusions.
+- `src/components/Comparison.tsx`: complete finalist comparison, difference spotlights and cited sources.
+- `src/domain/comparison.ts`: pure difference selection and full-vs-focused comparison behavior.
+- `src/domain/laptops.ts`: mock laptop scenario, attributes, offers and discriminating questions.
 - `src/components/ui/`: official shadcn/ui primitives, customized through shared tokens.
 
 ## Resume and next iteration
@@ -94,3 +97,7 @@ Each product card now gives one-click access to Evidence & assumptions. Where a 
 **Compare all (N)** includes all eligible options after blockers, not just the top two or the manually selected products. To intentionally focus on two or three products, select them on their cards and then use **Selected (N)**. The comparison highlights factors that actually vary, orders them by importance, displays three prominent trade-off summaries, and offers an all-factors toggle. Horizontal scrolling preserves the factor column.
 
 **Laptops** is the third local scenario, with six named model families and mock configurations. Its adaptive questions cover OS compatibility, RAM, USB-A, convertible form factor, battery, carry weight and return conditions. All prices, RAM amounts, ratings, variant-specific specifications, return policies and offers in this scenario are simulated for a deterministic demo. Product-family photos come from external merchants with source attribution. No live pricing, inventory or API access is provided.
+
+### Full comparison invariant
+
+The default all-finalist mode ignores optional card selections. Focused mode requires at least two still-eligible selections; otherwise it falls back to the full eligible list. The selector is pure and has a regression test in `src/domain/engine.test.ts`.
