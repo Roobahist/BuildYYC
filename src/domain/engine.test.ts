@@ -135,7 +135,7 @@ test('couch access uncertainty remains visible and never guarantees hallway fit'
   const decision = deriveDecision(couches, session)
   assert.ok(decision.excluded.some(p => p.product.id === 'forma'))
   assert.ok(decision.eligible.some(p => p.product.id === 'sunday'))
-  assert.ok(decision.eligible.every(p => p.verification.some(v => v.includes('Fit is not verified'))))
+  assert.ok(decision.eligible.every(p => p.product.concerns.some(v => v.includes('Fit is not verified'))))
 })
 
 test('intent matching handles supported requests and explicitly rejects unsupported ones', () => {
@@ -184,4 +184,16 @@ test('every displayed demo model has credited photo metadata', () => {
     assert.ok(product.image.sourceUrl.startsWith('https://'))
     assert.ok(product.image.credit.length > 0)
   }
+})
+
+test('general demo guidance is not counted as missing product data', () => {
+  const couches = categories[1]
+  const decision = deriveDecision(couches, createSession(couches))
+  const complete = decision.eligible.find(row => row.product.id === 'cove')!
+  const incomplete = decision.eligible.find(row => row.product.id === 'sunday')!
+  assert.deepEqual(complete.verification, [])
+  assert.ok(complete.product.concerns.length > 0)
+  assert.ok(!decision.needsVerification.some(row => row.product.id === 'cove'))
+  assert.ok(incomplete.verification.some(note => note.includes('costs') || note.includes('demo score')))
+  assert.ok(decision.needsVerification.some(row => row.product.id === 'sunday'))
 })

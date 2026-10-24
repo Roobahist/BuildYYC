@@ -85,3 +85,17 @@ The last local visual edits from the previous Codex session were not published t
 - [ ] Test mobile (320/375px), tablet (768px) and desktop (1280px), including working image URLs and keyboard/screen-reader operation.
 - [ ] Replace remote hotlinked images with licensed, locally served assets before launch.
 - [ ] Validate model-specific couch material and delivery attributes with sellers when moving beyond illustrative data.
+
+## Screenshot-driven visual and demo clarity fixes (October 24, 2026)
+
+- [x] Fix dropdown spacing and native caret position, including 320px mobile widths.
+- [x] Prevent sofa and piano photos from cropping; use contain with proportional card padding.
+- [x] Strengthen color hierarchy: accessible indigo buttons/scores, teal eligibility, amber incomplete costs.
+- [x] Raise informational text sizes and add clear ranking/price/requirements emphasis.
+- [x] Keep curated demo requirements actionable; show missing-data warnings only for genuine null/unknown values.
+- [x] Move general caution about physical fit into the product-details notes instead of repeating it as missing data on every product.
+- [x] Extend regression tests for general scenario advice versus missing catalogue inputs.
+- [ ] Rerun full Node 24 tests, typecheck, and production build on a machine with repository dependencies.
+- [ ] Check screenshots at mobile/tablet/desktop widths and test controls, photo loading and focus in a real browser.
+
+The fixes above were reviewed by inspecting source code and the reported screenshots. No browser rendering or local test execution is claimed by this GitHub-only checkpoint.

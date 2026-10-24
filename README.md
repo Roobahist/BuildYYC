@@ -82,3 +82,7 @@ Ponytail guided scope and architecture. The official project-local Impeccable Co
 ## Visual refresh
 
 The `feat/comparr-inspired-redesign` branch adds a neutral, photo-led shopping UI in `src/redesign.css`, and sourced imagery in `src/domain/images.ts`. No decision logic or new infrastructure was introduced. Images are remotely hosted for demo purposes only; source links are in the Evidence tab. Replace remote images with licensed local assets before a public release. See `PROGRESS.md` for unverified work.
+
+## Demo presentation and warnings
+
+This is a simulated shopping scenario. Product cards reflect the supplied catalogue values for scoring and hard requirements; product photo and manufacturer documentation do not establish retailer offer terms. General shopping advice is in the details panel and is not a missing-data warning. When values are genuinely unspecified, those options remain eligible with explicit missing-demo-data labels and incomplete scores. The visual refinement uses accented blue for ranking/actions, teal for matching requirements, amber for incomplete inputs, and contained product photos.

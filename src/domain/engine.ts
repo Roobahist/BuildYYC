@@ -42,7 +42,7 @@ export function checkRequirement(product: Product, factor: Factor, session: Sess
   const formatted = factor.id === 'price' ? money(Number(value)) : `${value}${factor.unit ? ` ${factor.unit}` : ''}`
   const limit = factor.id === 'price' ? money(Number(constraint.value)) : `${constraint.value}${factor.unit ? ` ${factor.unit}` : ''}`
   const reason = result === null
-    ? `${factor.label}: needs verification${isTotal ? ` — ${total.unknown.join(', ')} cost unknown` : ' — information unavailable'}.`
+    ? `This demo has no ${factor.label.toLowerCase()} value${isTotal ? ` because ${total.unknown.join(', ')} cost is unspecified` : ''}.`
     : factor.id === 'price'
       ? `${session.budgetBasis === 'total' ? 'Setup estimate' : 'Listed price'} ${formatted}${!total.complete && isTotal ? '+' : ''} ${result ? 'is within' : 'exceeds'} your ${limit} budget.`
       : factor.kind === 'boolean'
@@ -80,9 +80,9 @@ export function evaluateProduct(product: Product, category: Category, session: S
   const total = acquisitionCost(product, session.owned)
   const verification = [
     ...requirements.filter(r => r.status === 'unknown').map(r => r.reason),
-    ...breakdown.filter(p => p.weight > 0 && p.score === null).map(p => `${p.label}: not enough information to score; verify before buying.`),
+    ...breakdown.filter(p => p.weight > 0 && p.score === null).map(p => `${p.label}: no demo score available.`),
     ...(!total.complete ? [`Unknown costs: ${total.unknown.join(', ')}. Total is a lower bound.`] : []),
-    ...product.concerns,
+    // General scenario advice belongs in details, not in the missing-data count.
   ]
   return { product, total, requirements, reasons: requirements.filter(r => r.status === 'failed'), verification, score, coverage: totalWeight ? knownWeight / totalWeight : 0, breakdown }
 }
