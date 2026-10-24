@@ -99,3 +99,17 @@ The last local visual edits from the previous Codex session were not published t
 - [ ] Check screenshots at mobile/tablet/desktop widths and test controls, photo loading and focus in a real browser.
 
 The fixes above were reviewed by inspecting source code and the reported screenshots. No browser rendering or local test execution is claimed by this GitHub-only checkpoint.
+
+## Evidence, complete comparison and laptop demo (October 24, 2026)
+
+- [x] Make evidence available directly from the product card with a named source count and an evidence-first details entry.
+- [x] Include manufacturer/source links or an explicit curated-demo-data label in the side-by-side comparison.
+- [x] Make full comparison include **all** eligible products by default, including after eliminations; keep intentional two-or-three-product focused comparison separately.
+- [x] Add comparison dimension analysis, visually highlight meaningful differences, show strongest differing fields above the table, and provide a show-all toggle.
+- [x] Add six laptop demo offers with sourced model-family photos, curated technical/pricing inputs and discriminating questions about Windows software, 32 GB RAM, built-in USB-A, 2-in-1 use, carry weight, battery life and returns.
+- [x] Extend laptop intent parsing, constraints, ranking controls, imagery fallback and domain regression checks.
+- [ ] Run Node 24 `npm test`, `npm run typecheck`, and `npm run build` on the latest branch. GitHub file-edit access cannot execute these commands.
+- [ ] Check the comparison at 320, 390, 768 and 1280px, especially 6-product horizontal scroll, sticky first column, the evidence link and keyboard access.
+- [ ] Verify laptop image links and source attribution. Images are external demo references, not production-licensed assets.
+
+The original MVP and earlier branch validation logs above are historical. No new runtime checks are claimed for this iteration.

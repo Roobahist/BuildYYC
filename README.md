@@ -86,3 +86,11 @@ The `feat/comparr-inspired-redesign` branch adds a neutral, photo-led shopping U
 ## Demo presentation and warnings
 
 This is a simulated shopping scenario. Product cards reflect the supplied catalogue values for scoring and hard requirements; product photo and manufacturer documentation do not establish retailer offer terms. General shopping advice is in the details panel and is not a missing-data warning. When values are genuinely unspecified, those options remain eligible with explicit missing-demo-data labels and incomplete scores. The visual refinement uses accented blue for ranking/actions, teal for matching requirements, amber for incomplete inputs, and contained product photos.
+
+## Faster evidence and complete finalist comparison
+
+Each product card now gives one-click access to Evidence & assumptions. Where a source exists, the card identifies it and the comparison includes a direct reference. Simulated attributes are described as curated demo inputs rather than live verified offers.
+
+**Compare all (N)** includes all eligible options after blockers, not just the top two or the manually selected products. To intentionally focus on two or three products, select them on their cards and then use **Selected (N)**. The comparison highlights factors that actually vary, orders them by importance, displays three prominent trade-off summaries, and offers an all-factors toggle. Horizontal scrolling preserves the factor column.
+
+**Laptops** is the third local scenario, with six named model families and mock configurations. Its adaptive questions cover OS compatibility, RAM, USB-A, convertible form factor, battery, carry weight and return conditions. All prices, RAM amounts, ratings, variant-specific specifications, return policies and offers in this scenario are simulated for a deterministic demo. Product-family photos come from external merchants with source attribution. No live pricing, inventory or API access is provided.

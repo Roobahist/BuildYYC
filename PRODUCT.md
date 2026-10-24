@@ -34,3 +34,8 @@ Pure deterministic decision engine, typed mock data, estimated acquisition costs
 
 ## Open decisions
 Considered is a provisional product name selected for this MVP. Currency is illustrative CAD; taxes and live availability are outside scope. Robot sensors are deferred pending validation of the first two scenarios.
+
+
+## October 2026 demo extension
+
+A third category tests laptop decision-making: mandatory operating system, memory capacity, ports and mobility are separate from ranked battery, display and performance preferences. Evidence is now a first-level action on product cards, and comparison shows all remaining eligible candidates unless the shopper explicitly chooses a focused subset. These are curated demos, not purchase-ready product recommendations.
