@@ -1,4 +1,5 @@
 import type { Category, Cost, Evidence, Factor, Product } from './types.ts'
+import { images } from './images.ts'
 
 const checked = '2026-10-24'
 const assumptions: Evidence = {
@@ -64,7 +65,7 @@ function piano(p: {
   const bench = p.bench ?? p.bundled
   const costs = pianoCosts(p.bundled, p.shipping).map(c => c.id === 'bench' ? { ...c, amount: bench ? 0 : 75, status: bench ? 'included' as const : 'required' as const } : c)
   return {
-    id: p.id, name: p.name, maker: p.maker, subtitle: p.subtitle, price: p.price, color: p.color, visual: p.visual ?? 'portable',
+    id: p.id, name: p.name, maker: p.maker, subtitle: p.subtitle, price: p.price, color: p.color, visual: p.visual ?? 'portable', image: images[p.id],
     attributes: { includesStand: p.bundled, includesBench: bench, weightKg: p.weight, performance: p.performance, portability: p.portability, returnDays: p.returns, headphones: p.headphones === undefined ? true : p.headphones },
     scores: { performance: p.performance, portability: p.portability }, costs, strengths: p.strengths, tradeoff: p.tradeoff,
     evidence: [...(p.evidence ?? []), assumptions], concerns: [],
@@ -76,7 +77,7 @@ const pianos: Product[] = [
   piano({ id: 'yamaha-p145', name: 'P-145', maker: 'Yamaha', subtitle: 'A simple place to start', price: 549, bundled: false, weight: 11.1, performance: 80, portability: 89, returns: 14, shipping: 25, color: '#c0b49e', strengths: ['Lightweight setup', 'Lower starting price'], tradeoff: 'Short demo return window; accessories add $195.' }),
   piano({ id: 'casio-cdps110', name: 'CDP-S110 starter set', maker: 'Casio', subtitle: 'Small space, complete setup', price: 649, bundled: true, weight: 10.5, performance: 73, portability: 94, returns: 30, shipping: 30, color: '#586f66', strengths: ['Stand and bench in demo offer', 'Easy to move'], tradeoff: 'Illustrative playing-experience score trails the others.' }),
   piano({ id: 'kawai-es120', name: 'ES120', maker: 'Kawai', subtitle: 'Room to grow', price: 799, bundled: false, weight: 12.5, performance: 94, portability: 81, returns: null, shipping: 40, color: '#adb5b9', strengths: ['Hammer-action keyboard', 'Portable design'], tradeoff: 'Stand and bench are separate; return policy is unverified.', evidence: [kawai] }),
-  piano({ id: 'yamaha-arius', name: 'Arius home set', maker: 'Yamaha', subtitle: 'A permanent spot for practice', price: 899, bundled: true, weight: 38, performance: 91, portability: 20, returns: 14, shipping: 75, color: '#a58264', visual: 'console', strengths: ['Furniture-style setup', 'Stand and bench in demo offer'], tradeoff: 'Heavy to move and a shorter demo return window.' }),
+  piano({ id: 'yamaha-arius', name: 'Arius YDP-145 demo set', maker: 'Yamaha', subtitle: 'A permanent spot for practice', price: 899, bundled: true, weight: 38, performance: 91, portability: 20, returns: 14, shipping: 75, color: '#a58264', visual: 'console', strengths: ['Furniture-style setup', 'Stand and bench in demo offer'], tradeoff: 'Heavy to move and a shorter demo return window.' }),
   piano({ id: 'roland-fp30x', name: 'FP-30X home set', maker: 'Roland', subtitle: 'More possibilities, more questions', price: 949, bundled: true, bench: false, weight: 14.8, performance: 96, portability: 65, returns: null, shipping: null, color: '#545d6b', strengths: ['Two headphone outputs', 'Stand in demo bundle'], tradeoff: 'Bench adds $75; delivery and return policy unknown.', evidence: [fp30] }),
 ]
 
@@ -94,7 +95,7 @@ const couchFactors: Factor[] = [
 
 function couch(id: string, name: string, subtitle: string, price: number, color: string, access: boolean | null, assemblyFree: boolean, material: string, comfort: number, care: number | null, returnDays: number | null, shipping: number | null, dimensions: string, packing: string, tradeoff: string): Product {
   return {
-    id, name, maker: 'Considered demo', subtitle, price, color, visual: 'couch',
+    id, name, maker: 'IKEA', subtitle, price, color, visual: 'couch', image: images[id],
     attributes: { narrowAccess: access, assemblyFree, material, comfort, care, returnDays, dimensions, packing },
     scores: { comfort, care, material: null },
     costs: [{ id: 'delivery', label: 'Delivery', amount: shipping, status: 'required' }, { id: 'assembly', label: 'Optional assembly service', amount: assemblyFree ? 0 : 90, status: assemblyFree ? 'included' : 'optional' }],
@@ -107,10 +108,10 @@ function couch(id: string, name: string, subtitle: string, price: number, color:
 export const categories: Category[] = [
   { id: 'pianos', name: 'Digital pianos', noun: 'piano', description: 'Find the right keys. Count the whole setup.', prompt: 'I want a digital piano under $1,000.', defaultBudget: 1000, factors: pianoFactors, products: pianos },
   { id: 'couches', name: 'Couches', noun: 'couch', description: 'Love it in the room. Get it through the door.', prompt: "I'm buying a couch for my apartment.", defaultBudget: 1500, factors: couchFactors, products: [
-    couch('cove', 'Cove modular', 'Made for the apartment shuffle', 999, '#829383', true, false, 'Fabric', 84, 92, 30, 99, '210 × 88 × 78 cm', 'Largest box: 92 × 72 × 55 cm', 'Assembly required; measure every box and hallway turn.'),
-    couch('forma', 'Forma three-seat', 'A little more room to stretch', 1199, '#c9af85', false, true, 'Fabric', 95, 66, 14, 149, '235 × 99 × 85 cm', 'Single pack: 240 × 103 × 90 cm', 'Illustrative delivery plan rules out narrow access.'),
-    couch('milo', 'Milo loveseat', 'Smaller footprint, softer landing', 799, '#c8a09a', true, false, 'Velvet', 78, 48, 30, 79, '168 × 82 × 77 cm', 'Largest box: 88 × 78 × 54 cm', 'Velvet care takes more attention; capacity is smaller.'),
-    couch('sunday', 'Sunday lounge', 'The deep-seat contender', 1399, '#9eaaa6', null, true, 'Fabric', 97, null, null, null, '225 × 112 × 82 cm', 'Packaging dimensions unknown', 'Delivery cost, access, care score, and return policy need checking.'),
-    couch('arc', 'Arc leather sofa', 'Easy to wipe, harder to move', 1249, '#9c6c4e', false, true, 'Leather', 88, 82, 7, 129, '212 × 94 × 84 cm', 'Single pack: 217 × 99 × 89 cm', 'Short demo return window and no narrow-access plan.'),
+    couch('cove', 'VIMLE modular sofa', 'Made for the apartment shuffle', 999, '#829383', true, false, 'Fabric', 84, 92, 30, 99, '210 × 88 × 78 cm', 'Largest box: 92 × 72 × 55 cm', 'Assembly required; measure every box and hallway turn.'),
+    couch('forma', 'KIVIK sofa', 'A little more room to stretch', 1199, '#c9af85', false, true, 'Fabric', 95, 66, 14, 149, '235 × 99 × 85 cm', 'Single pack: 240 × 103 × 90 cm', 'Illustrative delivery plan rules out narrow access.'),
+    couch('milo', 'KLIPPAN loveseat', 'Smaller footprint, softer landing', 799, '#c8a09a', true, false, 'Fabric', 78, 48, 30, 79, '168 × 82 × 77 cm', 'Largest box: 88 × 78 × 54 cm', 'Velvet care takes more attention; capacity is smaller.'),
+    couch('sunday', 'FRIHETEN sleeper sofa', 'The deep-seat contender', 1399, '#9eaaa6', null, true, 'Fabric', 97, null, null, null, '225 × 112 × 82 cm', 'Packaging dimensions unknown', 'Delivery cost, access, care score, and return policy need checking.'),
+    couch('arc', 'MORABO leather sofa', 'Easy to wipe, harder to move', 1249, '#9c6c4e', false, true, 'Leather', 88, 82, 7, 129, '212 × 94 × 84 cm', 'Single pack: 217 × 99 × 89 cm', 'Short demo return window and no narrow-access plan.'),
   ] },
 ]

@@ -24,7 +24,7 @@ Read this file, `README.md`, and `docs/BRIEF.md` before continuing. Checkboxes m
 
 ## Current work
 
-The first MVP is complete. All 11 execution steps are checked. Source and validation are saved on GitHub main; the portable source archive and this handoff are also in the chat outputs. No MVP implementation work remains for this checkpoint.
+The original MVP was completed on main. A follow-up visual-redesign branch adds photographic model references and a neutral layout. The historical validation below applies only to the original implementation.
 
 ## Decisions and known limits
 
@@ -70,3 +70,18 @@ Start the next iteration with a short observed usability test of the piano flow.
 - [ ] Expand the typed catalogue with robot sensors and controller/voltage incompatibility only after validating the core experience.
 - [ ] Add delivery-date and pet-related safety concerns only with honest evidence and unresolved-risk states.
 - [ ] Run a screen-reader/cross-browser/real-device accessibility pass before broader distribution.
+
+
+## Comparr-inspired redesign, October 24, 2026
+
+The last local visual edits from the previous Codex session were not published to GitHub. Resumed from main commit `d4680d8`. Existing decision-engine behavior is unchanged.
+
+- [x] Review the reference website and existing code, handoff and design brief.
+- [x] Add credited product photography for six pianos and five IKEA sofa model examples with fallback illustrations.
+- [x] Add centered landing search, neutral monochrome visual language, photo-led model cards and responsive CSS.
+- [x] Preserve existing blocker filtering, adaptive questions, scoring, unknown evidence and saved-session behavior.
+- [x] Add an image-metadata regression test.
+- [ ] Run Node 24 `npm test`, `npm run typecheck`, and `npm run build` on this branch. Earlier passes are not evidence for this revision.
+- [ ] Test mobile (320/375px), tablet (768px) and desktop (1280px), including working image URLs and keyboard/screen-reader operation.
+- [ ] Replace remote hotlinked images with licensed, locally served assets before launch.
+- [ ] Validate model-specific couch material and delivery attributes with sellers when moving beyond illustrative data.

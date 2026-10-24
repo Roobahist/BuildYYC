@@ -23,6 +23,7 @@ export interface Cost {
 }
 
 export interface Product {
+  image?: { src: string; sourceUrl: string; credit: string }
   id: string
   name: string
   maker: string

@@ -175,3 +175,13 @@ test('change explanations name products returning and new leaders', () => {
   const explanation = explainChange(deriveDecision(category, constrained), deriveDecision(category, session), 'Stand requirement disabled.')
   assert.match(explanation, /returned to your shortlist/)
 })
+
+
+test('every displayed demo model has credited photo metadata', () => {
+  for (const group of categories) for (const product of group.products) {
+    assert.ok(product.image, `Missing image for ${product.id}`)
+    assert.ok(product.image.src.startsWith('https://'))
+    assert.ok(product.image.sourceUrl.startsWith('https://'))
+    assert.ok(product.image.credit.length > 0)
+  }
+})
