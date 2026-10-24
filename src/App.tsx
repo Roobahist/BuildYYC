@@ -34,7 +34,7 @@ function Landing({ start, resume, hasSession }: { start: (category: Category, bu
   }
   return <main id="main" className="landing">
     <section className="landing-hero">
-      <div className="hero-copy"><h1>Know what<br />you’re <span className="headline-emphasis">really</span><br />buying.</h1><p className="hero-description">The hidden costs. The deal-breakers.<br />The question you didn’t know to ask.</p><p className="hero-support">Meet a shopping assistant that helps you think it through.</p>
+      <div className="hero-copy"><h1>Find the right product for you.</h1><p className="hero-description">A better shortlist starts with the questions you didn’t know to ask.</p><p className="hero-support">Compare what matters, eliminate deal-breakers, and see the full cost.</p>
         <form className="shopping-form" onSubmit={submit}><label htmlFor="shopping-request">What are you considering?</label><div className={`shopping-input ${error ? 'has-error' : ''}`}><input id="shopping-request" value={input} onChange={e => { setInput(e.target.value); setError('') }} placeholder="A digital piano under $1,000…" aria-describedby={error ? 'request-error' : 'supported-scenarios'} /><Button type="submit" size="icon" aria-label="Find my shortlist"><ArrowRight size={20} /></Button></div>{error && <p id="request-error" className="form-error" role="alert">{error}</p>}<p id="supported-scenarios" className="small muted">Local demo · Digital pianos and couches · No live search</p></form>
         {hasSession && <Button variant="link" className="resume-button" onClick={resume}>Pick up your last decision<ArrowRight size={15} /></Button>}
       </div>
@@ -44,7 +44,7 @@ function Landing({ start, resume, hasSession }: { start: (category: Category, bu
         <div className="preview-footnote"><ShieldCheck size={14} />You see the reasoning. You make the call.</div>
       </div>
     </section>
-    <section className="scenario-section" aria-labelledby="scenario-title"><div className="section-intro"><h2 id="scenario-title">Take a decision for a test drive.</h2><p className="muted">A real interaction. Illustrative products and prices.</p></div><div className="scenario-options">{categories.map(category => <button className="scenario-option" key={category.id} onClick={() => start(category)}><span className="scenario-number">{category.id === 'pianos' ? <Piano size={25} /> : <Sofa size={25} />}</span><div><h3>{category.name}</h3><p>{category.description}</p><span>{category.products.length} options to think through</span></div><ArrowUpRight size={21} /></button>)}</div></section>
+    <section className="scenario-section" aria-labelledby="scenario-title"><div className="section-intro"><h2 id="scenario-title">Take a decision for a test drive.</h2><p className="muted">A real interaction. Illustrative products and prices.</p></div><div className="scenario-options">{categories.map(category => <button className="scenario-option" key={category.id} onClick={() => start(category)}><span className="scenario-number"><ProductArt product={category.products[0]} />{category.id === 'pianos' ? <Piano size={25} /> : <Sofa size={25} />}</span><div><h3>{category.name}</h3><p>{category.description}</p><span>{category.products.length} options to think through</span></div><ArrowUpRight size={21} /></button>)}</div></section>
     <footer className="landing-footer"><span>For the decisions that deserve a second thought.</span><span className="buildyyc-credit">Built for BuildYYC <ArrowUpRight size={12} aria-hidden="true" /></span></footer>
   </main>
 }

@@ -37,7 +37,7 @@ Requests mentioning pianos/keyboards or couches/sofas/apartments can start the c
 
 ## What works
 
-- Two typed catalogues: six piano offers and five fictional couch offers.
+- Two typed catalogues: six piano offers and five illustrative IKEA-model couch offers.
 - Pure eligibility, acquisition-cost, normalization, weighted scoring, stable tie-breaking, adaptive questions, and change explanations.
 - Independently editable hard requirements and 0–5 importance weights. Upholstery can be a weighted preference or a mandatory selection.
 - Reversible exclusions, question skipping, editable earlier answers, owned accessories, listed-price versus setup-cost budgets, missing-score coverage, and explicit unknowns.
@@ -46,7 +46,7 @@ Requests mentioning pianos/keyboards or couches/sofas/apartments can start the c
 
 ## What is simulated
 
-All prices are illustrative CAD, before tax. Bundle contents, accessory estimates, return windows, shipping, subjective scores, and couch attributes are curated examples. Piano model names are real, but the sample offers are not retailer listings. Product art is an abstract illustration, not a manufacturer photo.
+All prices are illustrative CAD, before tax. Bundle contents, accessory estimates, return windows, shipping, subjective scores, and couch attributes are curated examples. Piano model names are real, but the sample offers are not retailer listings. Product cards reference credited third-party model photos, with CSS illustration fallback when images fail. All offer prices and scores remain fictional.
 
 Three checked manufacturer references support **only their specific claims**: Roland FP-10 headphone output/optional stand, FP-30X headphone outputs/optional stand, and Kawai ES120 action/overview weight. Checked dates and limitations are visible. No customer quotes, review counts, review consensus, fake citations, or statistical confidence percentages are used.
 
@@ -78,3 +78,7 @@ Zero weights do not contribute. Missing values are omitted and weighted data cov
 The most valuable next iteration is a small observed usability test of the piano flow, followed by verified Canadian seller offers and accessory/return evidence. Replace local catalogue data behind the same pure selector when real sources are available. Robot sensors, delivery-date constraints, and pet safety remain deferred; do not imply they work.
 
 Ponytail guided scope and architecture. The official project-local Impeccable Codex skill and hooks are installed under `.agents/` and `.codex/`; engine binaries and review captures are intentionally untracked. The detector's only initial findings were repeated Space Grotesk font warnings; that pairing follows the brief's example. No detector suite is added to CI. See `docs/VALIDATION.md` for final review evidence.
+
+## Visual refresh
+
+The `feat/comparr-inspired-redesign` branch adds a neutral, photo-led shopping UI in `src/redesign.css`, and sourced imagery in `src/domain/images.ts`. No decision logic or new infrastructure was introduced. Images are remotely hosted for demo purposes only; source links are in the Evidence tab. Replace remote images with licensed local assets before a public release. See `PROGRESS.md` for unverified work.

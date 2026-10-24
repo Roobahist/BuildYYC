@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
+
+/* Photo-led, monochrome presentation. Functional decision logic is unchanged. */
+:root {
+  --paper: #fff; --ink: #18181b; --muted: #71717a; --line: #e4e4e7; --cyan: #fff;
+  --color-background: #fafafa; --color-foreground: #18181b; --color-card: #fff;
+  --color-card-foreground: #18181b; --color-popover: #fff; --color-popover-foreground: #18181b;
+  --color-primary: #18181b; --color-primary-foreground: #fff; --color-secondary: #f4f4f5;
+  --color-secondary-foreground: #18181b; --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a; --color-accent: #f4f4f5;
+  --color-accent-foreground: #18181b; --color-border: #e4e4e7;
+  --color-input: #d4d4d8; --color-ring: #52525b;
+}
+body { background: #fafafa; color: #18181b; }
+body, button, input, select, h1, h2, h3, h4, .wordmark, .preview-price,
+.budget-input input, .fit-score strong, .price-row strong,
+[data-slot='sheet-title'], [data-slot='dialog-title'] {
+  font-family: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+h1, h2, h3, h4 { font-weight: 600; letter-spacing: -.045em; }
+:focus-visible { outline-color: #52525b; }
+input { caret-color: #18181b; }
+input[type='checkbox'] { accent-color: #18181b; }
+::selection { background: #e4e4e7; }
+.site-header { height: 76px; border-color: #ededf0; }
+.wordmark { font-size: 25px; letter-spacing: -.05em; }
+.wordmark-period { color: #18181b; }
+.brand-symbol { width: 27px; height: 27px; background: #18181b; border: 0; color: #fff; }
+.brand-symbol svg { background: none; }
+.status-dot { background: #666; }
+.landing-hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 80px 0 60px; gap: 34px; }
+.hero-copy { max-width: 850px; width: 100%; }
+.hero-copy h1 { font-size: clamp(48px, 6.8vw, 86px); line-height: 1.07; font-weight: 600; letter-spacing: -.07em; max-width: 14ch; margin: 0 auto; }
+.hero-description { font-size: clamp(17px,1.8vw,20px); color: #52525b; margin: 22px 0 8px; line-height: 1.5; }
+.hero-support { font-size: 14px; color: #85858c; margin: 0 auto 29px; max-width: 55ch; }
+.shopping-form { max-width: 670px; margin: 0 auto; text-align: left; }
+.shopping-form label { font-size: 12px; color: #52525b; }
+.shopping-input { min-height: 64px; background: #fff; border: 1px solid #dedee2; padding: 7px; border-radius: 14px; box-shadow: 0 12px 35px #18181b09; }
+.shopping-input:focus-within, .budget-input:focus-within { outline: 2px solid #71717a; }
+.shopping-input input { font-size: 15px; padding-left: 15px; }
+.shopping-input input::placeholder { color: #a1a1aa; }
+.shopping-input button { width: 48px; height: 48px; border-radius: 10px; }
+.shopping-form > p { text-align: center; color: #85858c; }
+.resume-button, .weight-value { color: #18181b; }
+.hero-preview { width: min(100%,460px); padding: 0; margin: auto; text-align: left; }
+.preview-product { background: #fff; transform: none; border: 1px solid #e8e8eb; border-radius: 16px; box-shadow: 0 18px 50px #18181b0b; padding: 17px 23px 21px; }
+.preview-product > .product-art { height: 170px; margin-bottom: 12px; padding: 0; background: #fff; }
+.preview-cost { color: #71717a; }
+.preview-total { border-color: #e4e4e7; color: #18181b; }
+.preview-insight { background: #18181b; margin: -2px 13px 0; border-radius: 0 0 13px 13px; transform: none; box-shadow: none; }
+.insight-icon, .insight-arrow { color: #fff; }
+.preview-insight span:not(.insight-icon) { color: #d4d4d8; }
+.preview-footnote { margin-top: 14px; }
+.scenario-section { padding-top: 42px; border-color: #ececf0; }
+.scenario-options { gap: 18px; }
+.scenario-option { align-items: center; min-width: 0; gap: 17px; padding: 14px 18px; border: 1px solid #e8e8ed; border-radius: 14px; background: #fff; transition: box-shadow 180ms, transform 180ms, border-color 180ms; }
+.scenario-option:hover { border-color: #a1a1aa; box-shadow: 0 10px 25px #18181b0b; transform: translateY(-2px); }
+.scenario-number { flex: 0 0 125px; width: 125px; overflow: hidden; }
+.scenario-number > svg { display: none; }
+.scenario-number .product-art { width: 100%; height: 95px; padding: 0; border-radius: 9px; }
+.scenario-number .art-caption { display: none; }
+.scenario-option h3 { font-size: 19px; }
+.scenario-option div > span { color: #71717a; }
+.workspace-title h1 { font-size: clamp(30px,3vw,43px); letter-spacing: -.06em; }
+.trail-current { color: #18181b; }
+.constraint-chip { background: #eeeef1; color: #27272a; border-radius: 8px; }
+.constraint-chip:hover { background: #e4e4e7; }
+.question-panel { background: #18181b; color: #fafafa; border: 1px solid #27272a; border-radius: 15px; padding: 27px 30px; }
+.question-identity, .question-step { color: #a1a1aa; }
+.question-panel > p, .question-skip, .elimination-preview { color: #d4d4d8; }
+.elimination-preview strong { color: #fff; }
+.preview-dot { background: #fff; }
+.question-yes { background: #fff; color: #18181b; font-weight: 600; border-radius: 8px; }
+.question-yes:hover { background: #e4e4e7; }
+.question-no { color: #fff; border-color: #71717a; border-radius: 8px; }
+.question-no:hover, .question-skip:hover { background: #3f3f46; color: #fff; }
+.shortlist-heading h2 span { background: #ededf0; }
+.product-grid { gap: 18px; }
+.product-card { background: #fff; border: 1px solid #e7e7ea; border-radius: 15px; box-shadow: 0 3px 13px #18181b04; }
+.product-card:hover { border-color: #c4c4c9; box-shadow: 0 15px 35px #18181b0a; }
+.card-art-wrap { border-bottom: 1px solid #f1f1f2; background: #fff; }
+.product-art { background: #fff; padding: 0; height: 215px; }
+.product-photo { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; background: #fff; }
+.art-caption { z-index: 1; left: 12px; bottom: 8px; padding: 3px 6px; border-radius: 4px; background: #ffffffdf; color: #71717a; font-size: 10px; }
+.rank-badge { background: #ffffffed; color: #27272a; border: 1px solid #ececef; border-radius: 7px; }
+.rank-first { background: #18181b; border-color: #18181b; color: #fff; }
+.maker { color: #71717a; letter-spacing: .06em; text-transform: uppercase; font-size: 10px; }
+.fit-score, .price-row > span:last-child { color: #18181b; }
+.fit-score strong, .price-row strong { font-weight: 600; }
+.fit-score span { font-size: 10px; color: #71717a; }
+.strengths { border-color: #eeeef1; }
+.strengths span { color: #52525b; }
+.preferences { background: #fff; padding: 19px 18px 6px; border: 1px solid #e7e7eb; border-radius: 13px; }
+.weight-control [data-slot='slider-thumb'] { background: #18181b; }
+.budget-input { border-color: #e4e4e7; }
+.comparison-lead, .details-tabs { background: #f4f4f5; color: #27272a; }
+.photo-source { border-top: 1px solid #e4e4e7; padding-top: 15px; margin-top: 16px; }
+.photo-source a { color: #18181b; text-decoration: underline; }
+@media (max-width: 850px) {
+  .landing-hero { padding: 55px 0 44px; gap: 30px; }
+  .hero-copy h1 { font-size: clamp(47px,8vw,70px); }
+  .preferences { border: 1px solid #e7e7eb; padding: 22px; }
+  .product-art { height: 215px; }
+}
+@media (max-width: 600px) {
+  .landing-hero { padding: 40px 0 36px; }
+  .hero-copy h1 { font-size: clamp(43px,11vw,58px); }
+  .hero-description { font-size: 16px; }
+  .shopping-input { min-height: 58px; padding: 6px; }
+  .shopping-input input { font-size: 13px; padding-left: 9px; }
+  .shopping-input button { width: 44px; height: 44px; flex-shrink: 0; }
+  .preview-product { padding: 15px; }
+  .preview-product > .product-art { height: 155px; }
+  .preview-insight { margin-inline: 8px; }
+  .scenario-option { padding: 13px; gap: 12px; }
+  .scenario-number { flex-basis: 104px; width: 104px; }
+  .scenario-number .product-art { height: 85px; }
+  .scenario-option h3 { font-size: 17px; }
+  .question-panel { padding: 24px 19px; }
+  .product-art { height: 215px; }
+  .preferences { display: block; padding: 20px; }
+  .budget-control { padding: 15px 0; border-bottom: 1px solid #e4e4e7; }
+  .quick-weights { padding-top: 15px; }
+  .preferences > button { margin-top: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .scenario-option { transform: none !important; } }

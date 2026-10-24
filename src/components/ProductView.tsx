@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { ArrowUpRight, Check, CheckCircle2, CircleHelp, Info, Plus, Scale, X } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -8,10 +8,16 @@ import { money } from '@/domain/engine'
 import type { Category, Product, RankedProduct, Session } from '@/domain/types'
 
 export function ProductArt({ product, large = false }: { product: Product; large?: boolean }) {
-  return <div className={`product-art ${product.visual} ${large ? 'art-large' : ''}`} style={{ '--product-color': product.color } as CSSProperties} role="img" aria-label={`Abstract ${product.visual === 'couch' ? 'sofa' : 'piano'} illustration, not a manufacturer photo`}>
-    {product.visual === 'couch' ? <div className="sofa-shape"><div className="sofa-back" /><div className="sofa-seat" /><div className="sofa-arm arm-left" /><div className="sofa-arm arm-right" /><div className="sofa-leg leg-left" /><div className="sofa-leg leg-right" /></div>
-      : <div className="piano-shape"><div className="music-rest" /><div className="piano-body"><span className="piano-mark">{product.maker}</span><div className="piano-controls"><i /><i /><i /></div><div className="keyboard">{Array.from({ length: 28 }, (_, i) => <span className={`key ${[0, 1, 3, 4, 5].includes(i % 7) ? 'has-black' : ''}`} key={i} />)}</div></div>{product.visual === 'console' && <div className="piano-legs"><span /><span /><i /></div>}</div>}
-    <span className="art-caption">Illustration · demo offer</span>
+  const [imageFailed, setImageFailed] = useState(false)
+  const hasPhoto = Boolean(product.image?.src && !imageFailed)
+  return <div className={`product-art ${product.visual} ${large ? 'art-large' : ''}`} style={{ '--product-color': product.color } as CSSProperties}
+    role={hasPhoto ? undefined : 'img'} aria-label={hasPhoto ? undefined : 'Abstract product illustration, not a manufacturer photo'}>
+    {hasPhoto ? <img className="product-photo" src={product.image!.src}
+      alt={`${product.maker} ${product.name} product photo`} loading={large ? 'eager' : 'lazy'} decoding="async"
+      onError={() => setImageFailed(true)} />
+    : product.visual === 'couch' ? <div className="sofa-shape"><div className="sofa-back" /><div className="sofa-seat" /><div className="sofa-arm arm-left" /><div className="sofa-arm arm-right" /><div className="sofa-leg leg-left" /><div className="sofa-leg leg-right" /></div>
+    : <div className="piano-shape"><div className="music-rest" /><div className="piano-body"><span className="piano-mark">{product.maker}</span><div className="piano-controls"><i /><i /><i /></div><div className="keyboard">{Array.from({ length: 28 }, (_, i) => <span className={`key ${[0, 1, 3, 4, 5].includes(i % 7) ? 'has-black' : ''}`} key={i} />)}</div></div>{product.visual === 'console' && <div className="piano-legs"><span /><span /><i /></div>}</div>}
+    <span className="art-caption">{hasPhoto ? 'Product photo · Demo offer' : 'Illustration · Demo offer'}</span>
   </div>
 }
 
@@ -43,7 +49,7 @@ function EvidenceDetails({ row }: { row: RankedProduct }) {
     <p>{source.relevance}</p><p className="small muted">{source.limitation}</p>
     {source.url ? <a className="source-link" href={source.url} target="_blank" rel="noreferrer">{source.title}<ArrowUpRight size={14} /></a> : <span className="small muted">No external citation. Illustrative assumption.</span>}
     {source.checkedAt && <small className="source-date">Link and claim checked {source.checkedAt}{source.date ? ` · Published ${source.date}` : ' · Publication date not provided'}</small>}
-  </article>)}<p className="small muted">Manufacturer documentation supports specifications, not unbiased quality judgments. No customer reviews, quotes, or review consensus are simulated.</p></div>
+  </article>)}{row.product.image && <p className="photo-source small muted">Photo: <a href={row.product.image.sourceUrl} target="_blank" rel="noreferrer">{row.product.image.credit} <ArrowUpRight size={12} className="inline" /></a>. This image is not evidence of sample pricing, delivery, or bundle terms.</p>}<p className="small muted">Manufacturer documentation supports specifications, not unbiased quality judgments. No customer reviews, quotes, or review consensus are simulated.</p></div>
 }
 
 export function ProductDetails({ row, category, session, children }: { row: RankedProduct; category: Category; session: Session; children: React.ReactNode }) {
