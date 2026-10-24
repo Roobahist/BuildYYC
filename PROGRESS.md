@@ -20,11 +20,11 @@ Read this file, `README.md`, and `docs/BRIEF.md` before continuing. Checkboxes m
 - [x] 8. Add product details, evidence/confidence, hidden costs, ranking explanations, and final comparison.
 - [x] 9. Test core domain behavior; run typecheck and production build; fix failures.
 - [x] 10. Inspect desktop/mobile and key interactions; apply Impeccable critique and polish.
-- [ ] 11. Finalize README, limitations, handoff, and portable repository checkpoint.
+- [x] 11. Finalize README, limitations, handoff, and portable repository checkpoint.
 
 ## Current work
 
-Implementation and validation are complete. Finalizing the source-backed design record, README, GitHub checkpoint, and source archive. Next required action is step 11 only; application code does not need more work for this checkpoint.
+The first MVP is complete. All 11 execution steps are checked. Source and validation are saved on GitHub main; the portable source archive and this handoff are also in the chat outputs. No MVP implementation work remains for this checkpoint.
 
 ## Decisions and known limits
 
@@ -50,7 +50,18 @@ Implementation and validation are complete. Finalizing the source-backed design 
 
 ## Next action
 
-Finish step 11: validate design metadata, create and push the repository checkpoint, and write a portable source archive and handoff. Then the first MVP is complete.
+Start the next iteration with a short observed usability test of the piano flow. Read the next-iteration checklist below. Do not rebuild the existing MVP, add infrastructure, or claim that deferred scenarios already work.
+
+## Repository checkpoint and local run
+
+- Implemented MVP commit: `80cda96` on `main`, pushed to `https://github.com/Roobahist/BuildYYC`.
+- A follow-up documentation commit records this completed checklist; use latest `main` when resuming.
+- No deployment or GitHub Actions added. No pull request because this was an empty repository's initial main-branch bootstrap.
+- Portable source archive: `outputs/BuildYYC-MVP.zip` in this Codex chat. It contains tracked source, lockfile, original brief, design metadata, and this checklist; it omits node_modules and binaries.
+- Within a fresh clone using Node 24: `npm install`, then `npm run dev`. Checks: `npm test`, `npm run typecheck`, `npm run build`.
+- This machine has fnm at `/opt/homebrew/bin/fnm`; `fnm exec --using 24 npm run dev` avoids its older default Node. During execution, the existing Node 24.19.0 runtime was also available at `/Users/Roobahist/.local/state/fnm_multishells/6707_1792795950562/bin/node`.
+- Design record: DESIGN.md merged from actual source tokens; `.impeccable/design.json` YAML/JSON/token/reference consistency checks passed. Sidecar tonal ramps are non-normative panel metadata.
+- See `docs/VALIDATION.md` for the test and visual-review limits.
 
 ## Next iteration (not part of this MVP)
 
