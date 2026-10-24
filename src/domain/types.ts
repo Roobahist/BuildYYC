@@ -29,7 +29,7 @@ export interface Product {
   maker: string
   subtitle: string
   price: number
-  visual: 'portable' | 'console' | 'couch'
+  visual: 'portable' | 'console' | 'couch' | 'laptop'
   color: string
   attributes: Record<string, Value>
   scores: Record<string, number | null>

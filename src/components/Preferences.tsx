@@ -19,7 +19,7 @@ function Weight({ factor, session, update }: { factor: Factor; session: Session;
 
 export function Preferences({ category, session, update, reset }: { category: Category; session: Session; update: UpdateSession; reset: () => void }) {
   const budget = session.constraints.price
-  const quick = category.id === 'pianos' ? ['price', 'performance', 'portability'] : ['price', 'comfort', 'care']
+  const quick = category.id === 'pianos' ? ['price', 'performance', 'portability'] : category.id === 'laptops' ? ['price', 'performance', 'batteryHours'] : ['price', 'comfort', 'care']
   const setBudget = (value: number) => update({ ...session, constraints: { ...session.constraints, price: { ...budget, value } } }, `Maximum ${session.budgetBasis === 'total' ? 'setup' : 'listed-price'} budget changed to ${money(value)}.`)
   const setRequirement = (factor: Factor, active: boolean, value = session.constraints[factor.id].value) => update({
     ...session,
