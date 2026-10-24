@@ -218,3 +218,20 @@ test('laptop scenario distinguishes compatibility blockers, priorities and cost 
   assert.equal(matchIntent('Looking for a laptop under $1500', categories).category?.id, 'laptops')
   assert.equal(matchIntent('Looking for a laptop under $1500', categories).budget, 1500)
 })
+
+test('comparison includes every eligible finalist and puts different weighted factors first', async () => {
+  const { comparisonFields } = await import('./comparison.ts')
+  const laptops = categories.find(c => c.id === 'laptops')!
+  const session = createSession(laptops)
+  const eligible = deriveDecision(laptops, session).eligible
+  const fields = comparisonFields(laptops, eligible, session)
+  assert.equal(eligible.length, 6)
+  assert.ok(fields.some(f => f.id === 'os' && f.differs))
+  assert.ok(fields.some(f => f.id === 'memoryGb' && f.differs))
+  assert.ok(fields.some(f => f.id === 'usbA' && f.differs))
+  assert.ok(fields.every(f => f.values.length === eligible.length))
+  assert.ok(fields.findIndex(f => !f.differs) === -1 || fields.slice(fields.findIndex(f => !f.differs)).every(f => !f.differs))
+  const finalists = deriveDecision(laptops, answerQuestion(session, 'memoryGb', 'required')).eligible
+  assert.equal(finalists.length, 3)
+  assert.ok(comparisonFields(laptops, finalists, session).every(f => f.values.length === 3))
+})
